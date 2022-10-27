@@ -1,0 +1,27 @@
+In this problem, you will implement a simulation for a queueing network with two classes of customers. There are
+two queues in the network. The queue capacities are assumed to be infinite, and each queue has a single server.
+High-priority customers in each queue are always served before low-priority customers in each queue; however, if a
+low-priority customer is already in service, it will not be pre-empted by a high-priority customer. Customers arrive
+to the overall system according to a Poisson process with rate λ customers per second. With probability pH , the
+customer will be a high-priority customer, and with probability pL = 1 − pH , the customer will be a low-priority
+customer. The customers will always arrive to Queue 1. The service time for a customer at Queue 1 is exponentially
+distributed with an average service time of µ11 seconds, independent of the priority of the customer.
+
+When a customer departs from Queue 1, it enters Queue 2. The service time for a high-priority customer at Queue 2
+is exponentially distributed with an average service time of 1/µ2H seconds, and the service time for a low-priority
+packet at Queue 2 is exponentially distributed with an average service time of 1/µ2L seconds. When a high-priority
+customer departs from Queue 2, it leaves the system. When a low-priority customer departs from Queue 2, it departs
+from the network with probability r2d , it returns to Queue 1 with probability r21 , and it returns to Queue 2 with
+probability r22 .
+
+Implement a discrete event simulation for the above system. For each of the experiments below, run the simulation
+until at least 500,000 customers have departed from the system. Let pH = 52 , pL = 35 , r2d = 14 , r21 = 41 , r22 = 21 ,
+µ1 = 20 customers per second, µ2H = 10 customers per second, and µ2L = 50 customers per second. Do not
+hard-code these values, but allow them to be entered as user inputs to the program.
+
+1. Plot the simulation and theoretical values for the high-priority throughput and the low-priority throughput of each
+queue as a function of λ for λ = 1, 2, · · · , 10 customers per second.
+2. Plot the simulation values for the expected number of each priority of customers in each queue (including the one
+in service) as a function of λ for λ = 1, 2, · · · , 10 customers per second.
+3. Plot the simulation values for the average time each priority customer spends in Queue 2 (including service time)
+during a single visit to Queue 2 as a function of λ for λ = 1, 2, · · · , 10 customers per second.
