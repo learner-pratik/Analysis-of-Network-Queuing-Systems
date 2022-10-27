@@ -1,4 +1,4 @@
-Simulation of Markovian Queuing System
+# Simulation of Markovian Queuing System
 
 Description:  This program simulates a Markovian queueing system.  
 The simulation generates arrival and departure events.
